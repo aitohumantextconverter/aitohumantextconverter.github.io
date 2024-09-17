@@ -1,128 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI to Human Text Converter - Convert AI-generated content into human-readable text with no limitations, free of cost. Perfect for assignments, essays, and more.">
-    <meta name="keywords" content="AI to Human Text Converter, Humanize AI Text, Free AI Text Converter, Unlimited AI Text Conversion, No login AI Text Tool">
-    <meta name="author" content="ai text to human text">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="AI to Human Text Converter - Convert AI-generated content into human-readable text with no limitations, free of cost. Ideal for assignments, essays, and more. Supports multiple languages."
+    />
+    <meta
+      name="keywords"
+      content="AI to Human Text Converter, Humanize AI Text, Free AI Text Converter, Multi-Language Support, Unlimited AI Text Conversion, No Login AI Text Tool"
+    />
+    <meta name="author" content="ai text to human text" />
     <title>AI to Human Text Converter</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f3f4f6;
-            color: #333;
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+      header {
+        background-color: #1976d2;
+        padding: 2rem;
+        text-align: center;
+        color: white;
+      }
+      header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+      }
+      nav {
+        margin: 1rem 0;
+        text-align: center;
+      }
+      nav a {
+        color: #ffffff;
+        margin: 0 1rem;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+      section {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+      }
+      section h2 {
+        color: #1976d2;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      section p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+      .features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+      .feature {
+        flex: 1;
+        min-width: 250px;
+        padding: 1.5rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        text-align: center;
+        background-color: #f9f9f9;
+      }
+      .feature h3 {
+        color: #1976d2;
+        margin-bottom: 1rem;
+      }
+      footer {
+        background-color: #1976d2;
+        color: white;
+        text-align: center;
+        padding: 1rem 0;
+      }
+      footer p {
+        margin: 0;
+        font-size: 0.9rem;
+      }
+      a.github-btn {
+        display: inline-block;
+        margin-top: 1.5rem;
+        padding: 0.75rem 1.5rem;
+        background-color: #1976d2;
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+      }
+      a.github-btn:hover {
+        background-color: #1769bb;
+      }
+      .input-section,
+      .result-section {
+        margin-top: 2rem;
+      }
+      .input-box,
+      .result-box {
+        width: 100%;
+        padding: 1rem;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        background-color: #f9f9f9;
+        box-sizing: border-box;
+      }
+      .logo img {
+        max-width: 100%; /* Ensure the logo is responsive */
+        height: auto; /* Maintain aspect ratio */
+        width: 150px; /* Fixed width, adjust as needed */
+        border-radius: 50%; /* Make the logo circular, remove if not needed */
+      }
+      @media (max-width: 768px) {
+        .features {
+          flex-direction: column;
         }
         header {
-            background-color: #4f46e5;
-            padding: 2rem;
-            text-align: center;
-            color: white;
+          flex-direction: column;
+          text-align: center;
         }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
+
+        .logo img {
+          width: 100px; /* Smaller logo size on mobile */
         }
-        section {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 1rem;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+
+        nav ul {
+          flex-direction: column;
         }
-        section h2 {
-            color: #4f46e5;
-            font-size: 2rem;
-            margin-bottom: 1rem;
+
+        nav ul li {
+          margin-bottom: 10px;
         }
-        section p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .feature {
-            flex: 1;
-            min-width: 250px;
-            padding: 1.5rem;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            text-align: center;
-            background-color: #f9fafb;
-        }
-        .feature h3 {
-            color: #4f46e5;
-            margin-bottom: 1rem;
-        }
-        footer {
-            background-color: #4f46e5;
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-        }
-        footer p {
-            margin: 0;
-            font-size: 0.9rem;
-        }
-        a.github-btn {
-            display: inline-block;
-            margin-top: 1.5rem;
-            padding: 0.75rem 1.5rem;
-            background-color: #4f46e5;
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-        }
-        a.github-btn:hover {
-            background-color: #3b82f6;
-        }
-        @media (max-width: 768px) {
-            .features {
-                flex-direction: column;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>AI to Human Text Converter</h1>
-        <p>Transform AI-generated text into human-like content with our free, unlimited tool.</p>
-        <a class="github-btn" href="https://github.com/yourusername/ai-to-human-text-converter" target="_blank">View on GitHub</a>
+      <div class="logo">
+        <img
+          src="120x120.png"
+          alt="AI To Human Text Converter Logo"
+          width="150"
+          height="150"
+        />
+      </div>
+      <h1>AI to Human Text Converter</h1>
+      <nav>
+        <a href="https://aitohumantextconverter.in">AI to human text</a>
+        <a href="https://aitohumantextconverter.in/privacy-policy"
+          >Privacy Policy</a
+        >
+        <a href="https://aitohumantextconverter.in/terms-and-conditions"
+          >Terms and Conditions</a
+        >
+        <a href="https://aitohumantextconverter.in/disclaimer">Disclaimer</a>
+        <a href="https://aitohumantextconverter.in/about-us">About Us</a>
+      </nav>
     </header>
 
-    <section>
-        <h2>About the Tool</h2>
-        <p>The AI to Human Text Converter allows users to convert AI-generated text into human-readable content while maintaining accuracy and creativity. Whether you're working on assignments, essays, or blog posts, our tool provides unlimited, free usage with no sign-up required. It's the perfect solution for those looking to humanize AI content effortlessly.</p>
-        
-        <h2>Key Features</h2>
-        <div class="features">
-            <div class="feature">
-                <h3>Unlimited Use</h3>
-                <p>No restrictions on the number of conversions, and no login required.</p>
-            </div>
-            <div class="feature">
-                <h3>Free of Cost</h3>
-                <p>Enjoy the tool completely free without any hidden charges.</p>
-            </div>
-            <div class="feature">
-                <h3>Accurate & Creative</h3>
-                <p>Convert AI text while retaining its original meaning and adding a human touch.</p>
-            </div>
+    <section id="home">
+      <a class="github-btn" href="https://aitohumantextconverter.in"
+        >Ai text to human text</a
+      >
+      <h2>Welcome to AI to Human Text Converter</h2>
+      <p>
+        The AI to Human Text Converter is a revolutionary online tool designed
+        to transform AI-generated content into natural, human-readable text.
+        This tool is perfect for anyone who needs to humanize AI-generated text,
+        whether for academic purposes, content creation, or professional
+        documentation. Our converter ensures that your content maintains its
+        original meaning while making it more engaging and easier to read.
+      </p>
+
+      <h2>Key Features</h2>
+      <div class="features">
+        <div class="feature">
+          <h3>Unlimited Use</h3>
+          <p>
+            Our tool provides unlimited conversions with no restrictions. You
+            can convert as much text as you need without worrying about any
+            limitations or hidden charges.
+          </p>
         </div>
+        <div class="feature">
+          <h3>Multi-Language Support</h3>
+          <p>
+            Supports multiple languages including English, Spanish, German,
+            French, and Arabic. This makes it an ideal tool for international
+            users who need to convert text into various languages.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>100% Free</h3>
+          <p>
+            Enjoy our service completely free of charge. No signups, no hidden
+            fees, and no subscriptions required. Just a simple, easy-to-use tool
+            at your fingertips.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>Fast Conversion</h3>
+          <p>
+            Our advanced algorithms ensure that your text is converted quickly
+            and efficiently. The conversion process takes just seconds, allowing
+            you to get your humanized content in no time.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>Easy to Use</h3>
+          <p>
+            The user interface is designed to be intuitive and user-friendly.
+            Simply paste your text, select the language, and click the convert
+            button to get started. No complex instructions or technical
+            knowledge required.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>Secure and Private</h3>
+          <p>
+            Your data is secure with us. We ensure that your content remains
+            private and confidential. Our tool is built with robust security
+            measures to protect your information.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="input-section">
+      <h2>How to Use the Converter</h2>
+      <p>
+        Using our AI to Human Text Converter is straightforward and hassle-free.
+        Follow these simple steps to humanize your AI-generated text:
+      </p>
+      <ol>
+        <li>
+          Visit our website at
+          <a href="https://aitohumantextconverter.in"
+            >aitohumantextconverter.in</a
+          >.
+        </li>
+        <li>
+          Paste the AI-generated content into the input box provided on the
+          page.
+        </li>
+        <li>Select the language of the text you are converting.</li>
+        <li>Enter the captcha code to ensure you are a human user.</li>
+        <li>Click the "Convert" button to start the process.</li>
+        <li>
+          Wait a few seconds for the conversion to complete, and your humanized
+          text will be displayed in the result box.
+        </li>
+      </ol>
+    </section>
+
+    <section class="result-section">
+      <h2>Benefits of Using Our Converter</h2>
+      <p>
+        Our AI to Human Text Converter offers several benefits that make it a
+        valuable tool for anyone who works with AI-generated text:
+      </p>
+      <ul>
+        <li>
+          <strong>Enhanced Readability:</strong> By converting AI text into
+          human-like content, our tool makes your text more engaging and easier
+          to understand.
+        </li>
+        <li>
+          <strong>Improved Quality:</strong> The conversion process improves the
+          quality of your text by adjusting sentence structures and vocabulary
+          to better suit human readers.
+        </li>
+        <li>
+          <strong>Versatility:</strong> Use the tool for various applications
+          including academic writing, content creation, and business
+          communications.
+        </li>
+        <li>
+          <strong>Time Efficiency:</strong> Save time by avoiding manual
+          rephrasing and editing. Our tool delivers results quickly, allowing
+          you to focus on other tasks.
+        </li>
+        <li><strong>Content Protection:</strong> Ensure your</li>
+      </ul>
+    </section>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <p>
+        AI to Human Text Converter is dedicated to providing an efficient and
+        user-friendly tool to help convert AI-generated text into human-readable
+        format. Our team is passionate about enhancing digital content quality
+        and accessibility. We strive to offer a tool that is not only effective
+        but also easy to use and accessible to everyone. Whether you are a
+        student, a content creator, or a professional, our converter is designed
+        to meet your needs and help you achieve your goals with ease.
+      </p>
     </section>
 
     <footer>
-        <p>&copy; 2024 AI to Human Text Converter. All rights reserved.</p>
+      <p>&copy; 2024 AI to Human Text Converter. All rights reserved.</p>
+      <p>
+        For more information, visit our
+        <a
+          href="https://aitohumantextconverter.in/privacy-policy"
+          style="color: #ffffff"
+          >Privacy Policy</a
+        >
+        and
+        <a
+          href="https://aitohumantextconverter.in/terms-and-conditions"
+          style="color: #ffffff"
+          >Terms and Conditions</a
+        >.
+      </p>
     </footer>
-</body>
+  </body>
 </html>
